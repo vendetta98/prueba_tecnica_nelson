@@ -24,6 +24,14 @@ namespace backendC_.Controllers
             return Ok(await _context.Tienda.ToListAsync());
         }
 
+        [HttpGet]
+        [Microsoft.AspNetCore.Mvc.Route("/empleados")]
+        public async Task<ActionResult<IEnumerable<Empleado>>> GetEmpleados()
+        {
+            return Ok(await _context.Empleados.ToListAsync());
+        }
+
+
         [HttpGet("{id}")]
         public async Task<ActionResult<Empleado>> GetById(int id) {
             var empleados = _context.Empleados.FindAsync(id);
