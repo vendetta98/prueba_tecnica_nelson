@@ -17,8 +17,8 @@ builder.Services.AddDbContext<nombre_apellido_dbContext>(options =>
 });
 
 builder.Services.AddCors(options => {
-    options.AddPolicy("Front", policy => {
-        policy.WithOrigins("*")
+    options.AddPolicy(name: "Front", policy => {
+        policy.WithOrigins("http://localhost:5173/", "http://localhost:5173")
         .AllowAnyMethod()
         .AllowAnyHeader();
     });
